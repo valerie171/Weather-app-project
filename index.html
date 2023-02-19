@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/8aa55b09e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <form id="search-form">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-5">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter a city..."
+                    id="city-input"
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+                </div>
+
+                <div class="col-4">
+                  <input
+                    type="submit"
+                    value="Search"
+                    class="btn btn-outline-primary"
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+                </div>
+                <div class="col-3">
+                  <input
+                    id="current-button"
+                    type="submit"
+                    value="Current location"
+                    class="btn btn-outline-danger"
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <h1>Málaga,Spain</h1>
+          <hr />
+          <p>
+            <em id="date">Saturday 13:31</em>
+            <br />
+            Sunny
+          </p>
+          <div class="float-right">
+            <h2>
+              <span class="temp" id="main-temp"> 16 </span>
+              <span class="units">
+                <a href="#" id="celsius-link"> °C</a>
+              </span>
+            </h2>
+          </div>
+          <div class="middle">
+            <div class="row align-items-center">
+              <div class="col-4">
+                <img
+                  src="images/weather.svg"
+                  alt="weather app"
+                  width="230px
+              "
+                />
+              </div>
+              <div class="col-4">
+                <ul id="description">
+                  <li class="indicator">Precipitation: 0%</li>
+                  <li class="indicator">Humidity: 49%</li>
+                  <li class="indicator">Wind: 10 km/h</li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <img
+                  src="images/sunny.png"
+                  alt="sunny"
+                  width="150px"
+                  class="weather-icon float-right"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="forecast">
+            <div class="row">
+              <div class="col-2">
+                <div class="date">Sat</div>
+                <img src="images/sunny.png" alt="sunny" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">16°C |</span>
+                  <span class="temp-min">6°C</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="date">Sun</div>
+                <img src="images/sunny.png" alt="sunny" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">17°C |</span>
+                  <span class="temp-min">7°C</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="date">Mon</div>
+                <img
+                  src="images/partly cloudy.png"
+                  alt="partly cloudy"
+                  width="50"
+                />
+                <div class="temperatures">
+                  <span class="temp-max">16°C |</span>
+                  <span class="temp-min">7°C</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="date">Tue</div>
+                <img src="images/rainy.png" alt="rainy" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">13°C |</span>
+                  <span class="temp-min">9°C</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="date">Wed</div>
+                <img src="images/rainy.png" alt="rainy" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">13°C|</span>
+                  <span class="temp-min">8°C</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <div class="date">Thu</div>
+                <img src="images/rainy.png" alt="rainy" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">13°C|</span>
+                  <span class="temp-min">7°C</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <a
+        href="https://weather.com/weather/today/l/36.72,-4.42?par=google"
+        target="_blank"
+        class="source"
+      >
+        weather.com</a
+      >
+      <div class="author">Coded by Valeriia Tymoshenko</div>
+    </footer>
+    <script src="src/index.js"></script>
+  </body>
+</html>

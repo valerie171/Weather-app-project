@@ -1,0 +1,88 @@
+body {
+  background-image: url(../images/mounts.jpg);
+  background-size: 880px;
+  font-family: "Roboto", sans-serif;
+}
+.card {
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+  background: #e6e3f2;
+
+  box-shadow: 2px 2px 2px 2px #c3b9c8;
+}
+h1 {
+  color: #424874;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+hr {
+  width: 50%;
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+p {
+  margin: 0;
+}
+h2 {
+  color: #424874;
+  text-align: right;
+  font-size: 50px;
+  margin: 10px 40px;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  text-decoration: none;
+}
+a {
+  color: #424874;
+  text-decoration: none;
+  font-size: 18px;
+}
+a:hover {
+  text-decoration: underline;
+  color: #a0aff4;
+  cursor: pointer;
+}
+
+.middle {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 7px;
+}
+ul {
+  padding: 0;
+}
+.indicator {
+  list-style: none;
+  text-align: right;
+  font-size: 15px;
+}
+
+.forecast {
+  margin: 15px 0;
+  text-align: center;
+  color: #a6b1e1;
+}
+.date {
+  font-weight: 500;
+}
+.temp-max {
+  font-weight: bold;
+}
+.source {
+  text-align: center;
+  font-size: 13px;
+  display: block;
+  margin: 0 auto;
+  padding-right: 700px;
+  text-decoration: none;
+  color: #e3e0f2;
+}
+.author {
+  text-align: center;
+  padding-right: 580px;
+  color: #e3e0f2;
+  font-weight: bold;
+}

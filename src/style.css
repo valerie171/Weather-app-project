@@ -28,11 +28,16 @@ p {
 h2 {
   color: #424874;
   text-align: right;
-  font-size: 50px;
+  font-size: 65px;
   margin: 10px 40px;
-  margin-bottom: 10px;
+
   padding: 0 15px;
   text-decoration: none;
+}
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
 a {
   color: #424874;
@@ -51,13 +56,16 @@ a:hover {
   display: block;
   padding: 7px;
 }
+.middle img {
+  margin-right: 5px;
+  height: 140px;
+}
 ul {
   padding: 0;
-}
-.indicator {
+  margin: 0;
   list-style: none;
-  text-align: right;
-  font-size: 15px;
+  text-align: center;
+  font-size: 17px;
 }
 
 .forecast {

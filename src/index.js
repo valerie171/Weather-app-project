@@ -36,10 +36,10 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let weatherIcon = document.querySelector("#icon");
   let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = `${temperature} `;
+  mainTemp.innerHTML = Math.round(celsiusTemperature);
   humidityElement.innerHTML = response.data.main.humidity;
   descriptionElement.innerHTML = response.data.weather[0].description;
 
@@ -50,6 +50,28 @@ function showTemperature(response) {
   );
   weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#main-temp");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = celsiusTemperature * 1.8 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#main-temp");
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+
+  temperature.innerHTML = celsiusTemperature;
+}
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", showFahrenheitTemp);
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", showCelsiusTemp);
+
 function showCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
@@ -70,7 +92,7 @@ function CurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
-
+let celsiusTemperature = null;
 let currentTemp = document.querySelector("#current-button");
 currentTemp.addEventListener("click", CurrentPosition);
 let weatherForm = document.querySelector("#search-form");

@@ -22,8 +22,18 @@ hr {
   margin-top: 0;
   margin-bottom: 2px;
 }
-p {
+ul.head {
+  list-style: none;
+
   margin: 0;
+  text-align: left;
+}
+
+ul {
+  padding: 0;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
 h2 {
   color: #424874;
@@ -57,10 +67,10 @@ a:hover {
   padding: 7px;
 }
 .middle img {
-  margin-right: 5px;
   height: 140px;
+  width: 160px;
 }
-ul {
+.indicator {
   padding: 0;
   margin: 0;
   list-style: none;

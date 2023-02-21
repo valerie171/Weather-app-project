@@ -66,11 +66,10 @@
           </form>
           <h1>Málaga,Spain</h1>
           <hr />
-          <p>
-            <em id="date">Saturday 13:31</em>
-            <br />
-            Sunny
-          </p>
+          <ul class="head">
+            <em><li id="date">Saturday 13:31</li></em>
+            <li id="description">Sunny</li>
+          </ul>
 
           <h2>
             <span class="temp" id="main-temp"> 16 </span>
@@ -91,13 +90,17 @@
               </div>
               <div class="col-4">
                 <ul>
-                  <li>Precipitation: 0%</li>
-                  <li>Humidity: 49%</li>
-                  <li>Wind: 10 km/h</li>
+                  <li class="indicator">
+                    Humidity: <span id="humidity"></span> %
+                  </li>
+                  <li class="indicator">
+                    Wind:
+                    <span id="wind"></span>km/h
+                  </li>
                 </ul>
               </div>
               <div class="col-4">
-                <img src="images/sunny.png" alt="sunny" width="160px" />
+                <img src="images/sunny.png" alt="sunny" />
               </div>
             </div>
           </div>

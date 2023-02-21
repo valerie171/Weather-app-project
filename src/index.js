@@ -33,10 +33,15 @@ form.addEventListener("submit", search);
 function showTemperature(response) {
   let currentCity = document.querySelector("h1");
   currentCity.innerHTML = response.data.name;
-
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind");
   let temperature = Math.round(response.data.main.temp);
   let mainTemp = document.querySelector("#main-temp");
   mainTemp.innerHTML = `${temperature} `;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
 }
 function showCity(event) {
   event.preventDefault();

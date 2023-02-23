@@ -20,6 +20,29 @@ if (minutes < 10) {
 let dates = document.querySelector("#date");
 dates.innerHTML = `${currentDay} ${hour}:${minutes} `;
 
+function showForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2">
+                <div class="date">${day}</div>
+                <img src="images/sunny.png" alt="sunny" width="50" />
+                <div class="temperatures">
+                  <span class="temp-max">16°C |</span>
+                  <span class="temp-min">6°C</span>
+                </div>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + ` </div>`;
+  forecast.innerHTML = forecastHTML;
+}
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-input");
@@ -28,7 +51,6 @@ function search(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-//
 
 function showTemperature(response) {
   let currentCity = document.querySelector("h1");
@@ -93,7 +115,9 @@ function CurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 let celsiusTemperature = null;
+
 let currentTemp = document.querySelector("#current-button");
 currentTemp.addEventListener("click", CurrentPosition);
 let weatherForm = document.querySelector("#search-form");
 weatherForm.addEventListener("click", showCity);
+showForecast();

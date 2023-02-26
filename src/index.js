@@ -66,14 +66,7 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = searchInput.value;
-}
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+
 
 function showTemperature(response) {
   let currentCity = document.querySelector("h1");
@@ -118,15 +111,23 @@ let fahrenheit = document.querySelector("#fahrenheit-link");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsiusTemp);
+//
 
-function showCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+
+
+function showCity(city) {
+  
+  
 
   let units = "metric";
   let apiKey = "f8e6a9e3d6fde87cb38868da460b1371";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
+}
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-input");
+  showCity(searchInput.value);
 }
 
 function showLocation(position) {
@@ -141,9 +142,11 @@ function CurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 let celsiusTemperature = null;
-
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
 let currentTemp = document.querySelector("#current-button");
 currentTemp.addEventListener("click", CurrentPosition);
 let weatherForm = document.querySelector("#search-form");
 weatherForm.addEventListener("click", showCity);
+showCity("Malaga");
 showForecast();

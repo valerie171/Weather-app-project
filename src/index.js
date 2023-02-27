@@ -63,7 +63,7 @@ function showForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "f8e6a9e3d6fde87cb38868da460b1371";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 
@@ -147,6 +147,5 @@ form.addEventListener("submit", search);
 let currentTemp = document.querySelector("#current-button");
 currentTemp.addEventListener("click", CurrentPosition);
 let weatherForm = document.querySelector("#search-form");
-weatherForm.addEventListener("click", showCity);
+weatherForm.addEventListener("submit", search);
 showCity("Malaga");
-showForecast();
